@@ -48,6 +48,23 @@ class Airship
         return new APIDList($this, $limit);
     }
 
+    public function getInactive() {
+        $deviceTypes = array("apid" => new APIDList($this), "device_token" => new DeviceTokenList($this));
+
+        $inactive = array();
+        foreach ($deviceTypes as $method => $device) {
+            while($device->valid()) {
+
+                $a = $device->current();
+                if( !$a->active )
+                {
+                    $inactive[] = $a->{$method};
+                }
+                $device->next();
+            }
+        }
+    }
+
     /**
      * Return a PushRequest that can be used to send a push
      * @return PushRequest
