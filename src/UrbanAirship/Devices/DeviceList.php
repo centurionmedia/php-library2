@@ -93,7 +93,7 @@ abstract class DeviceList implements \Iterator
             // If the next page has more tokens, keep going
             if ($tokenCount > 0){
                 return true;
-            }            
+            }
         }
 
         // No more data

@@ -6,6 +6,7 @@ Copyright 2013 Urban Airship and Contributors
 namespace UrbanAirship;
 
 use Httpful\Request;
+use UrbanAirship\Devices\DeviceToken;
 use UrbanAirship\Devices\DeviceTokenList;
 use UrbanAirship\Devices\APIDList;
 use UrbanAirship\Push\PushRequest;
@@ -63,6 +64,22 @@ class Airship
                 $device->next();
             }
         }
+
+        return $inactive;
+    }
+
+    public function clearBadges($deviceTokens) {
+
+        $inactive = array();
+        foreach ($deviceTokens as $deviceToken) {
+        }
+
+        return $inactive;
+    }
+
+    public function getDeviceTokenInfo($deviceToken) {
+        $device = new DeviceToken($this, $deviceToken);
+        return $device->info();
     }
 
     /**
