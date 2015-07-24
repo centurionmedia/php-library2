@@ -22,9 +22,9 @@ class DeviceToken
 
     public function info() {
 
-        $url = $this->airship->buildUrl(self::cURL, [
+        $url = $this->airship->buildUrl(self::cURL, array(
             "device_token" => $this->deviceToken
-        ]);
+        ));
 
         $response = $this->airship->request("GET", null, $url);
 
