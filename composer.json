@@ -21,7 +21,7 @@
     "autoload" : {
         "psr-0":{"UrbanAirship":"src/"},
         "files": [
-            "src/UrbanAirship/Push/DeviceToken.php",
+            "src/UrbanAirship/Devices/DeviceToken.php",
             "src/UrbanAirship/Push/Audience.php",
             "src/UrbanAirship/Push/Notification.php",
             "src/UrbanAirship/Push/Schedule.php"
