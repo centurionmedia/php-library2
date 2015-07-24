@@ -14,7 +14,7 @@ class DeviceToken
     private $airship;
     private $deviceToken;
 
-    function __construct(Airship $airship, $deviceToken)
+    function __construct($airship, $deviceToken)
     {
         $this->airship = $airship;
         $this->deviceToken = $deviceToken;
