@@ -30,26 +30,4 @@ class DeviceToken
 
         return $response;
     }
-
-
-    /**
-     * Takes the current page and retrieves the next
-     * page of results. Returns
-     * @return bool
-     */
-    private function loadNextPage()
-    {
-        if (!isset($this->page)) {
-            $next = $this->start_url;
-        } elseif (isset($this->page->{static::NEXT_PAGE_KEY})) {
-            $next = $this->page->{static::NEXT_PAGE_KEY};
-        } else {
-            return false;
-        }
-
-        $response = $this->airship->request("GET", null, $next, null, 3);
-        $this->page = json_decode($response->raw_body);
-        $this->position = 0;
-        return true;
-    }
 }
